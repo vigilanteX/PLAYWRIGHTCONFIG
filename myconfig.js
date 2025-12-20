@@ -21,6 +21,7 @@ const myCustomConfig = {
     trace: "on-first-retry",
     headless: false,
     actionTimeout: 9000,
+    navigationTimeout: 6000,
   },
   timeout: 40000,
   expect: {
