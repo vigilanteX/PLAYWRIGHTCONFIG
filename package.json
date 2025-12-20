@@ -1,0 +1,22 @@
+{
+  "name": "playwrightconfig",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vigilanteX/PLAYWRIGHTCONFIG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vigilanteX/PLAYWRIGHTCONFIG/issues"
+  },
+  "homepage": "https://github.com/vigilanteX/PLAYWRIGHTCONFIG#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3"
+  }
+}
