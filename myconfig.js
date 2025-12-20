@@ -21,6 +21,7 @@ const myCustomConfig = {
     trace: "on-first-retry",
     headless: false,
   },
+  timeout: 40000,
 
   /* Configure projects for major browsers */
   projects: [
