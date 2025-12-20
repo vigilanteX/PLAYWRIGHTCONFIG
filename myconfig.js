@@ -22,6 +22,9 @@ const myCustomConfig = {
     headless: false,
   },
   timeout: 40000,
+  expect: {
+    timeout: 15000,
+  },
 
   /* Configure projects for major browsers */
   projects: [
