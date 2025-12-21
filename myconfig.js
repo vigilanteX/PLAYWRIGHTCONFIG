@@ -1,7 +1,7 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const myCustomConfig = {
-  testDir: "./mycustomtests",
+  testDir: "mycustomtests/02PARALLEL",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -35,10 +35,10 @@ const myCustomConfig = {
       use: { ...devices["Desktop Chrome"] },
     },
 
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
+    // {
+    //   name: "firefox",
+    //   use: { ...devices["Desktop Firefox"] },
+    // },
 
     // {
     //   name: "webkit",
