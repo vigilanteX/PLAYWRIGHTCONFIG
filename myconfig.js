@@ -19,7 +19,7 @@ const myCustomConfig = {
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "off",
-    headless: false,
+    headless: true,
     actionTimeout: 9000,
     navigationTimeout: 6000,
     screenshot: "off",
