@@ -1,7 +1,7 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const myCustomConfig = {
-  testDir: "mycustomtests/04FORBIDONLY",
+  testDir: "mycustomtests/05BaseURL",
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -22,6 +22,7 @@ const myCustomConfig = {
     headless: false,
     actionTimeout: 9000,
     navigationTimeout: 6000,
+    baseURL: "https://naveenautomationlabs.com/",
   },
   timeout: 40000,
   expect: {
