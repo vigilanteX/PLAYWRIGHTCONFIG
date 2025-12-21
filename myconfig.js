@@ -1,7 +1,7 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const myCustomConfig = {
-  testDir: "mycustomtests/05BaseURL",
+  testDir: "mycustomtests/06TRACE",
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -18,11 +18,11 @@ const myCustomConfig = {
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    trace: "on",
     headless: false,
     actionTimeout: 9000,
     navigationTimeout: 6000,
-    baseURL: "https://naveenautomationlabs.com/",
+    // baseURL: "https://naveenautomationlabs.com/",
   },
   timeout: 40000,
   expect: {
