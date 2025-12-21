@@ -1,11 +1,11 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const myCustomConfig = {
-  testDir: "mycustomtests/03RETRIES",
+  testDir: "mycustomtests/04FORBIDONLY",
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
+  forbidOnly: true,
   /* Retry on CI only */
   retries: 3,
   /* Opt out of parallel tests on CI. */
