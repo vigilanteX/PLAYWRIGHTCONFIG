@@ -22,7 +22,14 @@ const myCustomConfig = {
     headless: false,
     actionTimeout: 9000,
     navigationTimeout: 6000,
-    screenshot: "on-first-failure",
+    screenshot: "off",
+    video: {
+      mode: "on",
+      size: {
+        height: 1920,
+        width: 1080,
+      },
+    },
     // baseURL: "https://naveenautomationlabs.com/",
   },
   timeout: 40000,
