@@ -1,0 +1,31 @@
+<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="2.022001">
+<testsuite name="demo.spec.js" timestamp="2025-12-21T17:30:06.026Z" hostname="chromium" tests="2" failures="1" skipped="0" time="0.013" errors="0">
+<testcase name="reporting1" classname="demo.spec.js" time="0.007">
+<failure message="demo.spec.js:3:5 reporting1" type="FAILURE">
+<![CDATA[  [chromium] › demo.spec.js:3:5 › reporting1 ───────────────────────────────────────────────────────
+
+    Error: meow
+
+      3 | test("reporting1", async function () {
+      4 |   console.log("report 1");
+    > 5 |   throw new Error("meow");
+        |         ^
+      6 | });
+      7 | test("reporting2", async function () {
+      8 |   console.log("report 2");
+        at /home/aman/Desktop/PLAYWRIGHTCONFIG/mycustomtests/07REPORTS/demo.spec.js:5:9
+]]>
+</failure>
+<system-out>
+<![CDATA[report 1
+]]>
+</system-out>
+</testcase>
+<testcase name="reporting2" classname="demo.spec.js" time="0.006">
+<system-out>
+<![CDATA[report 2
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
