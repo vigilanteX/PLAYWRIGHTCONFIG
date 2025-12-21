@@ -9,8 +9,4 @@ test("trace", async function ({ page }) {
   await page.locator("#input-password").fill("12345");
   await page.click("[value='Login']");
   await page.waitForTimeout(5000);
-  if (x % 2 !== 0) {
-    x++;
-    throw new Error("x is odd");
-  }
 });
