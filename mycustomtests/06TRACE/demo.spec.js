@@ -1,6 +1,7 @@
 import { test } from "@playwright/test";
-
+let x = 1;
 test("trace", async function ({ page }) {
+  console.warn(`value of x is ${x}`);
   await page.goto(
     "https://naveenautomationlabs.com/opencart/index.php?route=account/login"
   );
@@ -8,4 +9,8 @@ test("trace", async function ({ page }) {
   await page.locator("#input-password").fill("12345");
   await page.click("[value='Login']");
   await page.waitForTimeout(5000);
+  if (x % 2 !== 0) {
+    x++;
+    throw new Error("x is odd");
+  }
 });

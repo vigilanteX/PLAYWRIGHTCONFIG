@@ -7,7 +7,7 @@ const myCustomConfig = {
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: true,
   /* Retry on CI only */
-  retries: 3,
+  retries: 1,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -18,7 +18,7 @@ const myCustomConfig = {
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "off",
+    trace: "on-first-retry",
     headless: false,
     actionTimeout: 9000,
     navigationTimeout: 6000,
