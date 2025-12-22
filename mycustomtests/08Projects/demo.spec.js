@@ -1,0 +1,5 @@
+import { test } from "@playwright/test";
+
+test("my test", async function ({ page }) {
+  await page.goto("/opencart/index.php?route=account/login");
+});

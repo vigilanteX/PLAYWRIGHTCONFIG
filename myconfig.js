@@ -1,7 +1,7 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const myCustomConfig = {
-  testDir: "mycustomtests/07REPORTS",
+  testDir: "mycustomtests/08Projects",
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -40,8 +40,25 @@ const myCustomConfig = {
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      name: "master",
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: "https://naveenautomationlabs.com",
+        headless: false,
+      },
+    },
+    {
+      name: "desktop firefox browser",
+      use: { ...devices["Desktop Firefox"] },
+    },
+    {
+      name: "iphone15pro",
+      use: {
+        ...devices["iPhone 15 Pro Max"],
+        browserName: "chromium",
+        headless: false,
+        baseURL: "https://naveenautomationlabs.com",
+      },
     },
 
     // {
