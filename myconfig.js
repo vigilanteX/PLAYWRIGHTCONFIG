@@ -1,7 +1,7 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const myCustomConfig = {
-  testDir: "mycustomtests/08Projects",
+  testDir: "mycustomtests/09ImportantProjects",
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -59,6 +59,19 @@ const myCustomConfig = {
         headless: false,
         baseURL: "https://naveenautomationlabs.com",
       },
+    },
+    {
+      name: "setup",
+      testMatch: /.*\.setup\.js/,
+    },
+    {
+      name: "setup2",
+      testMatch: /.*\.setup\.js/,
+    },
+    {
+      name: "testdependency",
+      use: { ...devices["Desktop Firefox"] },
+      dependencies: ["setup", "setup2"],
     },
 
     // {

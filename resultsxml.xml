@@ -1,9 +1,53 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.588857">
-<testsuite name="demo.spec.js" timestamp="2025-12-22T17:04:21.426Z" hostname="iphone15pro" tests="1" failures="0" skipped="0" time="3.113" errors="0">
-<testcase name="my test" classname="demo.spec.js" time="3.113">
+<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="16.784869999999998">
+<testsuite name="myman.setup.js" timestamp="2025-12-23T17:23:11.310Z" hostname="setup2" tests="1" failures="0" skipped="0" time="6.873" errors="0">
+<testcase name="mysetup" classname="myman.setup.js" time="6.873">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results/demo-my-test-iphone15pro/video.webm]]
+[[ATTACHMENT|test-results/myman.setup.js-mysetup-setup2/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="myman.setup.js" timestamp="2025-12-23T17:23:11.310Z" hostname="setup" tests="1" failures="0" skipped="0" time="6.5" errors="0">
+<testcase name="mysetup" classname="myman.setup.js" time="6.5">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/myman.setup.js-mysetup-setup/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="demo.spec.js" timestamp="2025-12-23T17:23:11.310Z" hostname="testdependency" tests="1" failures="1" skipped="0" time="7.309" errors="0">
+<testcase name="yahooooooooo" classname="demo.spec.js" time="7.309">
+<failure message="demo.spec.js:3:5 yahooooooooo" type="FAILURE">
+<![CDATA[  [testdependency] › demo.spec.js:3:5 › yahooooooooo ───────────────────────────────────────────────
+
+    TimeoutError: page.goto: Timeout 6000ms exceeded.
+    Call log:
+      - navigating to "https://yahoo.com/", waiting until "load"
+
+
+      2 |
+      3 | test("yahooooooooo", async function ({ page }) {
+    > 4 |   await page.goto("https://yahoo.com");
+        |              ^
+      5 |   await page.waitForTimeout(4000);
+      6 | });
+      7 |
+        at /home/aman/Desktop/PLAYWRIGHTCONFIG/mycustomtests/09ImportantProjects/demo.spec.js:4:14
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/demo-yahooooooooo-testdependency/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/demo-yahooooooooo-testdependency/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-yahooooooooo-testdependency/video.webm]]
+
+[[ATTACHMENT|test-results/demo-yahooooooooo-testdependency/error-context.md]]
 ]]>
 </system-out>
 </testcase>
