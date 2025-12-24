@@ -1,16 +1,6 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="0.5571579999999999">
-<testsuite name="mycustomtests/09ImportantProjects/greptest/demo1.spec.js" timestamp="2025-12-24T06:09:47.598Z" hostname="greptest" tests="2" failures="0" skipped="0" time="0.004" errors="0">
-<testcase name="tc02" classname="mycustomtests/09ImportantProjects/greptest/demo1.spec.js" time="0.003">
-<system-out>
-<![CDATA[tc02
-]]>
-</system-out>
-</testcase>
-<testcase name="tc03" classname="mycustomtests/09ImportantProjects/greptest/demo1.spec.js" time="0.001">
-<system-out>
-<![CDATA[tc03
-]]>
-</system-out>
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.619754">
+<testsuite name="mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js" timestamp="2025-12-24T06:35:23.769Z" hostname="outputdircheck" tests="1" failures="0" skipped="0" time="1.866" errors="0">
+<testcase name="tc screenshot" classname="mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js" time="1.866">
 </testcase>
 </testsuite>
 </testsuites>

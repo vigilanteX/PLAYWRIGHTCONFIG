@@ -25,7 +25,7 @@ const myCustomConfig = {
     navigationTimeout: 6000,
     screenshot: "off",
     video: {
-      mode: "on",
+      mode: "off",
       size: {
         height: 1920,
         width: 1080,
@@ -92,6 +92,12 @@ const myCustomConfig = {
     {
       name: "greptest",
       testDir: "mycustomtests/09ImportantProjects/greptest",
+    },
+    {
+      name: "outputdircheck",
+      use: { ...devices["Desktop Firefox"], headless: false },
+      outputDir: "evidences",
+      testDir: "mycustomtests/09ImportantProjects/outDirCheck",
     },
 
     // {
