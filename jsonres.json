@@ -158,6 +158,22 @@
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
         "timeout": 40000
+      },
+      {
+        "outputDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "snap",
+        "name": "snap",
+        "testDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/mycustomtests/09ImportantProjects/snapshotproperty",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 40000
       }
     ],
     "shard": null,
@@ -170,13 +186,13 @@
   },
   "suites": [
     {
-      "title": "mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js",
-      "file": "mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js",
+      "title": "mycustomtests/09ImportantProjects/snapshotproperty/demo.spec.js",
+      "file": "mycustomtests/09ImportantProjects/snapshotproperty/demo.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "tc screenshot",
+          "title": "snapshot",
           "ok": true,
           "tags": [],
           "tests": [
@@ -184,19 +200,19 @@
               "timeout": 40000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "outputdircheck",
-              "projectName": "outputdircheck",
+              "projectId": "snap",
+              "projectName": "snap",
               "results": [
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1829,
+                  "duration": 6833,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-12-24T06:51:26.751Z",
+                  "startTime": "2025-12-24T07:36:26.595Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -204,8 +220,8 @@
               "status": "expected"
             }
           ],
-          "id": "e55eebcb6d281b4de51c-f8e8690bc9f0a2efa08e",
-          "file": "mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js",
+          "id": "e55eebcb6d281b4de51c-0ad1f8b43309334fb872",
+          "file": "mycustomtests/09ImportantProjects/snapshotproperty/demo.spec.js",
           "line": 3,
           "column": 5
         }
@@ -214,8 +230,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-12-24T06:51:26.258Z",
-    "duration": 3567.984,
+    "startTime": "2025-12-24T07:36:26.134Z",
+    "duration": 7566.704000000001,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

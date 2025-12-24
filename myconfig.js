@@ -3,6 +3,7 @@ import { devices } from "@playwright/test";
 const myCustomConfig = {
   // testDir: "mycustomtests/09ImportantProjects",
   /* Run tests in files in parallel */
+  snapshotDir: "snapshots",
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: false,
@@ -102,6 +103,10 @@ const myCustomConfig = {
         "done-by": "Aman",
         age: 100,
       },
+    },
+    {
+      name: "snap",
+      testDir: "mycustomtests/09ImportantProjects/snapshotproperty",
     },
 
     // {

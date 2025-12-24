@@ -1,6 +1,12 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.439382">
-<testsuite name="mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js" timestamp="2025-12-24T06:40:35.252Z" hostname="outputdircheck" tests="1" failures="0" skipped="0" time="1.665" errors="0">
-<testcase name="tc screenshot" classname="mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js" time="1.665">
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="0.9702050000000745">
+<testsuite name="mycustomtests/09ImportantProjects/snapshotproperty/demo.spec.js" timestamp="2025-12-24T07:15:02.810Z" hostname="master" tests="1" failures="1" skipped="0" time="0" errors="0">
+<testcase name="snapshot" classname="mycustomtests/09ImportantProjects/snapshotproperty/demo.spec.js" time="0">
+<failure message="demo.spec.js:3:5 snapshot" type="FAILURE">
+<![CDATA[  [master] › snapshotproperty/demo.spec.js:3:5 › snapshot ──────────────────────────────────────────
+
+    Error: Project "master" not found in the worker process. Make sure project name does not change.
+]]>
+</failure>
 </testcase>
 </testsuite>
 </testsuites>
