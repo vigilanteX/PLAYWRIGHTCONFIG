@@ -39,30 +39,34 @@ const myCustomConfig = {
 
   /* Configure projects for major browsers */
   projects: [
+    // {
+    //   name: "master",
+    //   use: {
+    //     ...devices["Desktop Chrome"],
+    //     baseURL: "https://naveenautomationlabs.com",
+    //     headless: false,
+    //   },
+    // },
+    // {
+    //   name: "desktop firefox browser",
+    //   use: { ...devices["Desktop Firefox"] },
+    // },
+    // {
+    //   name: "iphone15pro",
+    //   use: {
+    //     ...devices["iPhone 15 Pro Max"],
+    //     browserName: "chromium",
+    //     headless: false,
+    //     baseURL: "https://naveenautomationlabs.com",
+    //   },
+    // },
     {
-      name: "master",
-      use: {
-        ...devices["Desktop Chrome"],
-        baseURL: "https://naveenautomationlabs.com",
-        headless: false,
-      },
-    },
-    {
-      name: "desktop firefox browser",
-      use: { ...devices["Desktop Firefox"] },
-    },
-    {
-      name: "iphone15pro",
-      use: {
-        ...devices["iPhone 15 Pro Max"],
-        browserName: "chromium",
-        headless: false,
-        baseURL: "https://naveenautomationlabs.com",
-      },
+      name: "tear",
+      testMatch: "**/*.clean.js",
     },
     {
       name: "setup",
-      testMatch: /.*\.setup\.js/,
+      testMatch: "**/*.setup.js",
     },
     {
       name: "setup2",
@@ -71,7 +75,8 @@ const myCustomConfig = {
     {
       name: "testdependency",
       use: { ...devices["Desktop Firefox"] },
-      dependencies: ["setup", "setup2"],
+      dependencies: ["setup"],
+      teardown: "tear",
     },
 
     // {
