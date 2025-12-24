@@ -1,0 +1,224 @@
+{
+  "config": {
+    "configFile": "/home/aman/Desktop/PLAYWRIGHTCONFIG/playwright.config.js",
+    "rootDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "jsonres.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tear",
+        "name": "tear",
+        "testDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.clean.js"
+        ],
+        "timeout": 40000
+      },
+      {
+        "outputDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.setup.js"
+        ],
+        "timeout": 40000
+      },
+      {
+        "outputDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "setup2",
+        "name": "setup2",
+        "testDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.setup\\.js/"
+        ],
+        "timeout": 40000
+      },
+      {
+        "outputDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "testdependency",
+        "name": "testdependency",
+        "testDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/mycustomtests/09ImportantProjects",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 40000
+      },
+      {
+        "outputDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "testmatchuse",
+        "name": "testmatchuse",
+        "testDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG",
+        "testIgnore": [],
+        "testMatch": [
+          "09ImportantProjects/**/*.meow.js"
+        ],
+        "timeout": 40000
+      },
+      {
+        "outputDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "testignore",
+        "name": "testignore",
+        "testDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG",
+        "testIgnore": [
+          "testignorecheck/**/*.meow.js"
+        ],
+        "testMatch": [
+          "testignorecheck/**/*.spec.js"
+        ],
+        "timeout": 40000
+      },
+      {
+        "outputDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "greptest",
+        "name": "greptest",
+        "testDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/mycustomtests/09ImportantProjects/greptest",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 40000
+      },
+      {
+        "outputDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/evidences",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "done-by": "Aman",
+          "age": 100
+        },
+        "id": "outputdircheck",
+        "name": "outputdircheck",
+        "testDir": "/home/aman/Desktop/PLAYWRIGHTCONFIG/mycustomtests/09ImportantProjects/outDirCheck",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 40000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 8,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js",
+      "file": "mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "tc screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "outputdircheck",
+              "projectName": "outputdircheck",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1829,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-24T06:51:26.751Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e55eebcb6d281b4de51c-f8e8690bc9f0a2efa08e",
+          "file": "mycustomtests/09ImportantProjects/outDirCheck/demo.spec.js",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-12-24T06:51:26.258Z",
+    "duration": 3567.984,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

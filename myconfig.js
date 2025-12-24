@@ -11,7 +11,7 @@ const myCustomConfig = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [["junit", { outputFile: "resultsxml.xml" }]],
+  reporter: [["json", { outputFile: "jsonres.json" }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base
@@ -98,6 +98,10 @@ const myCustomConfig = {
       use: { ...devices["Desktop Firefox"], headless: false },
       outputDir: "evidences",
       testDir: "mycustomtests/09ImportantProjects/outDirCheck",
+      metadata: {
+        "done-by": "Aman",
+        age: 100,
+      },
     },
 
     // {
