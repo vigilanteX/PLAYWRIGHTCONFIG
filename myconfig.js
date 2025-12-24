@@ -5,7 +5,7 @@ const myCustomConfig = {
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: true,
+  forbidOnly: false,
   /* Retry on CI only */
   retries: 0,
   /* Opt out of parallel tests on CI. */
@@ -83,6 +83,11 @@ const myCustomConfig = {
     {
       name: "testmatchuse",
       testMatch: "09ImportantProjects/**/*.meow.js",
+    },
+    {
+      name: "testignore",
+      testIgnore: "testignorecheck/**/*.meow.js",
+      testMatch: "testignorecheck/**/*.spec.js",
     },
 
     // {

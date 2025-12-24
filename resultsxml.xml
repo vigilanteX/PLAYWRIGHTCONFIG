@@ -1,14 +1,16 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="0.581157">
-<testsuite name="mycustomtests/09ImportantProjects/testmatchdir/demo.meow.js" timestamp="2025-12-24T05:39:35.340Z" hostname="testmatchuse" tests="2" failures="0" skipped="0" time="0.004" errors="0">
-<testcase name="demo1" classname="mycustomtests/09ImportantProjects/testmatchdir/demo.meow.js" time="0.003">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="0.608851">
+<testsuite name="mycustomtests/09ImportantProjects/testignorecheck/demo1.spec.js" timestamp="2025-12-24T05:50:20.329Z" hostname="testignore" tests="1" failures="0" skipped="0" time="0.003" errors="0">
+<testcase name="test1demo1" classname="mycustomtests/09ImportantProjects/testignorecheck/demo1.spec.js" time="0.003">
 <system-out>
-<![CDATA[demo1
+<![CDATA[test1 in demo1
 ]]>
 </system-out>
 </testcase>
-<testcase name="demo2" classname="mycustomtests/09ImportantProjects/testmatchdir/demo.meow.js" time="0.001">
+</testsuite>
+<testsuite name="mycustomtests/09ImportantProjects/testignorecheck/demo2.spec.js" timestamp="2025-12-24T05:50:20.329Z" hostname="testignore" tests="1" failures="0" skipped="0" time="0.003" errors="0">
+<testcase name="test1demo2" classname="mycustomtests/09ImportantProjects/testignorecheck/demo2.spec.js" time="0.003">
 <system-out>
-<![CDATA[demo2
+<![CDATA[test2 in demo2
 ]]>
 </system-out>
 </testcase>
