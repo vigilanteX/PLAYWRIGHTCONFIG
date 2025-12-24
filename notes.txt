@@ -41,3 +41,10 @@ metadata: An object for custom data you want to associate with the project (visi
 snapshotDir: The base directory for reference snapshots.
 
 snapshotPathTemplate: A template string to customize where screenshots/snapshots are saved.
+
+
+
+Pattern,Where it looks
+*.setup.js,Only in the root folder (does not look inside folders).
+tests/**/*.setup.js,Only inside the tests folder and its subdirectories.
+"**/*.{setup,teardown}.js",Finds files ending in either .setup.js or .teardown.js.

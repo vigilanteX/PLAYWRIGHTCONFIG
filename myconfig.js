@@ -1,7 +1,7 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const myCustomConfig = {
-  testDir: "mycustomtests/09ImportantProjects",
+  // testDir: "mycustomtests/09ImportantProjects",
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -14,7 +14,8 @@ const myCustomConfig = {
   reporter: [["junit", { outputFile: "resultsxml.xml" }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
+    /* Base
+     URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
@@ -77,6 +78,11 @@ const myCustomConfig = {
       use: { ...devices["Desktop Firefox"] },
       dependencies: ["setup"],
       teardown: "tear",
+      testDir: "mycustomtests/09ImportantProjects",
+    },
+    {
+      name: "testmatchuse",
+      testMatch: "09ImportantProjects/**/*.meow.js",
     },
 
     // {

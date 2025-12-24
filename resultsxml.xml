@@ -1,27 +1,14 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="26.545162">
-<testsuite name="mymantear.clean.js" timestamp="2025-12-24T04:19:39.659Z" hostname="tear" tests="1" failures="0" skipped="0" time="5.336" errors="0">
-<testcase name="my tear" classname="mymantear.clean.js" time="5.336">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="0.581157">
+<testsuite name="mycustomtests/09ImportantProjects/testmatchdir/demo.meow.js" timestamp="2025-12-24T05:39:35.340Z" hostname="testmatchuse" tests="2" failures="0" skipped="0" time="0.004" errors="0">
+<testcase name="demo1" classname="mycustomtests/09ImportantProjects/testmatchdir/demo.meow.js" time="0.003">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|test-results/mymantear.clean.js-my-tear-tear/video.webm]]
+<![CDATA[demo1
 ]]>
 </system-out>
 </testcase>
-</testsuite>
-<testsuite name="myman.setup.js" timestamp="2025-12-24T04:19:39.659Z" hostname="setup" tests="1" failures="0" skipped="0" time="6.983" errors="0">
-<testcase name="mysetup" classname="myman.setup.js" time="6.983">
+<testcase name="demo2" classname="mycustomtests/09ImportantProjects/testmatchdir/demo.meow.js" time="0.001">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|test-results/myman.setup.js-mysetup-setup/video.webm]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="demo.spec.js" timestamp="2025-12-24T04:19:39.659Z" hostname="testdependency" tests="1" failures="0" skipped="0" time="8.62" errors="0">
-<testcase name="yahooooooooo" classname="demo.spec.js" time="8.62">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results/demo-yahooooooooo-testdependency/video.webm]]
+<![CDATA[demo2
 ]]>
 </system-out>
 </testcase>
