@@ -1,16 +1,8 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="0.608851">
-<testsuite name="mycustomtests/09ImportantProjects/testignorecheck/demo1.spec.js" timestamp="2025-12-24T05:50:20.329Z" hostname="testignore" tests="1" failures="0" skipped="0" time="0.003" errors="0">
-<testcase name="test1demo1" classname="mycustomtests/09ImportantProjects/testignorecheck/demo1.spec.js" time="0.003">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="0.5738280000000001">
+<testsuite name="mycustomtests/09ImportantProjects/greptest/demo1.spec.js" timestamp="2025-12-24T06:04:45.775Z" hostname="greptest" tests="1" failures="0" skipped="0" time="0.003" errors="0">
+<testcase name="tc01" classname="mycustomtests/09ImportantProjects/greptest/demo1.spec.js" time="0.003">
 <system-out>
-<![CDATA[test1 in demo1
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="mycustomtests/09ImportantProjects/testignorecheck/demo2.spec.js" timestamp="2025-12-24T05:50:20.329Z" hostname="testignore" tests="1" failures="0" skipped="0" time="0.003" errors="0">
-<testcase name="test1demo2" classname="mycustomtests/09ImportantProjects/testignorecheck/demo2.spec.js" time="0.003">
-<system-out>
-<![CDATA[test2 in demo2
+<![CDATA[tc01 worked
 ]]>
 </system-out>
 </testcase>

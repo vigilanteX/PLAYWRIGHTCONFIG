@@ -89,6 +89,9 @@ const myCustomConfig = {
       testIgnore: "testignorecheck/**/*.meow.js",
       testMatch: "testignorecheck/**/*.spec.js",
     },
+    {
+      name: "greptest",
+    },
 
     // {
     //   name: "firefox",
