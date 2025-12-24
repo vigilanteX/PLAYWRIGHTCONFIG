@@ -91,6 +91,7 @@ const myCustomConfig = {
     },
     {
       name: "greptest",
+      testDir: "mycustomtests/09ImportantProjects/greptest",
     },
 
     // {
