@@ -48,3 +48,45 @@ Pattern,Where it looks
 *.setup.js,Only in the root folder (does not look inside folders).
 tests/**/*.setup.js,Only inside the tests folder and its subdirectories.
 "**/*.{setup,teardown}.js",Finds files ending in either .setup.js or .teardown.js.
+
+
+
+//FINAL
+1. Root Level (Global Settings)
+These properties control the overall execution of the test runner. They are defined at the top level of the defineConfig object
+Property,Description
+testDir,The directory where Playwright looks for test files.
+timeout,"Maximum time (in ms) a single test can run. Default is 30,000."
+expect,"Global configuration for assertions (e.g., { timeout: 5000 })."
+fullyParallel,Whether to run all tests in all files in parallel.
+forbidOnly,Fails the build on CI if test.only is present in the code.
+retries,Number of times to retry a failed test.
+workers,Number of concurrent worker processes.
+reporter,"Reporter type: 'list', 'dot', 'html', 'junit', or 'json'."
+outputDir,Folder for test artifacts like screenshots and traces.
+globalSetup,Path to a file that runs once before all tests.
+globalTeardown,Path to a file that runs once after all tests.
+
+2. The use Object (Context & Browser Options)
+Property,Description
+baseURL,The base URL used for page.goto('/').
+browserName,"'chromium', 'firefox', or 'webkit'."
+headless,Whether to run the browser in headless mode (true/false).
+viewport,"Browser window size (e.g., { width: 1280, height: 720 })."
+screenshot,"When to take screenshots: 'on', 'off', 'only-on-failure'."
+video,"When to record video: 'on', 'retain-on-failure', 'off'."
+trace,"When to record traces: 'on', 'on-first-retry', 'retain-on-failure'."
+storageState,Path to a JSON file containing cookies/localStorage (for auth).
+actionTimeout,Timeout for actions like click() or type().
+permissions,"Array of granted permissions (e.g., ['geolocation'])."
+ignoreHTTPSErrors,Whether to ignore HTTPS errors during navigation.
+
+3. The projects Array (Specific Environments)
+Property,Description
+name,"Unique name for the project (e.g., 'chromium', 'Mobile Safari')."
+use,Overrides the global use settings for this specific project.
+testMatch,Filter tests for this project using glob patterns.
+testIgnore,Patterns to ignore tests for this specific project.
+dependencies,"List of projects that must run before this one (e.g., a setup project)."
+teardown,A project to run after this project finishes.
+retries,Overrides the global retry count for this project only.

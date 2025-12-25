@@ -1,0 +1,152 @@
+# Playwright configuration — complete property map and where each property belongs
+
+Below is a focused, structured mapping of Playwright Test configuration properties and **where** each can appear in your `playwright.config.(ts|js)` (root), inside the config `use` object, and/or inside a `projects` entry. I based this on Playwright’s official API docs for **TestConfig**, **TestOptions** (the `use` options), and **TestProject**. I cite those pages at the end — if you want I can export this as a CSV or a ready-to-paste `playwright.config.ts` template. ([Playwright][1])
+
+---
+
+## Quick rules (short)
+
+* **Root config** = properties of `TestConfig`. These define global test-run behavior. Many of these same properties are also valid at the **project** level (Playwright makes `TestProject` properties available at top-level). ([Playwright][1])
+* **`use` object** = `TestOptions`. These are browser / context / test-environment options (browserName, viewport, headless, baseURL, trace, video, screenshot, storageState, etc.). `use` can exist at root (shared defaults) and be overridden in a specific project (`projects[].use`) or per-test via `test.use(...)`. ([Playwright][2])
+* **`projects` array** = each entry is a `TestProject`. Project entries can contain any `TestProject` properties; any `TestProject` property is also valid at root (shared defaults). `projects[].use` is the per-project `use` options. ([Playwright][3])
+
+---
+
+## 1) Properties that belong under **`use`** (TestOptions — browser / context / per-test environment)
+
+These must be placed in `use` (root `use` or `projects[].use` or `test.use()`):
+
+* `acceptDownloads`
+* `actionTimeout`
+* `baseURL`
+* `browserName`
+* `bypassCSP`
+* `channel` (when launching branded browsers)
+* `chromiumSandbox` (platform-specific options exposed via `use` where applicable)
+* `colorScheme`
+* `device` / recommended: use `devices[...]` presets via `use: devices['name']`
+* `disableAnimations` (or related animation prefs, see docs)
+* `downloadsPath` (when overriding download folder per context)
+* `extraHTTPHeaders`
+* `geolocation`
+* `ignoreHTTPSErrors`
+* `javaScriptEnabled` (if exposed for context)
+* `locale`
+* `locale`-related options (timezones, etc.)
+* `permissions`
+* `proxy` (context-level proxy settings)
+* `recordVideo` / `video` (e.g., `"on"|"retain-on-failure"|"on-first-retry"` etc. — Playwright exposes `video` option)
+* `retries` is **not** a `use` option — it’s a test-run option (see TestConfig below).
+* `screenshot` (`'off' | 'on' | 'only-on-failure'` etc.)
+* `serviceWorkers` (context options like bypassing or route behaviour)
+* `storageState` (path or JSON object to preload context state)
+* `timezoneId` (e.g., `"Europe/London"`)
+* `trace` (e.g., `'off' | 'on' | 'retain-on-failure' | 'on-first-retry'`)
+* `userAgent`
+* `viewport` (object `{ width, height }`)
+* `video` (alias/variants — recording config)
+* `httpCredentials` (username/password to authenticate)
+* `basePort` / port-related options where Playwright exposes them for contexts
+* `isMobile`, `hasTouch`, `deviceScaleFactor` (device emulation flags)
+* `headless` (context/launcher level: frequently set via `use` when using `devices[...]` or browser launch options)
+
+> Note: `TestOptions` contains many browser-/context-level fields. The full authoritative list and the exact accepted values (and names for newer/experimental fields) are in the TestOptions doc. Use `use` for these. ([Playwright][2])
+
+---
+
+## 2) Properties that belong at the **root config** (TestConfig) — TEST-RUN / runner-level options
+
+These appear at the top-level of `defineConfig({...})` (and most of them can also be set per-project):
+
+* `testDir` — directory with tests.
+* `testMatch` — glob pattern(s) for matching test files.
+* `testIgnore` — glob(s) to ignore.
+* `timeout` — per-test timeout (ms).
+* `globalTimeout` — whole-run timeout.
+* `expect` — expect-specific configuration (timeouts, snapshot matching options).
+* `forbidOnly` — fail CI if `test.only()` present.
+* `updateSnapshots` / `update` (snapshots update mode via CLI or config).
+* `reporter` (or `reporters`) — built-in/custom reporters.
+* `outputDir` — where artifacts are written by default.
+* `preserveOutput` / `preserveOutput`-style options (controls whether to keep artifacts from passed tests, etc.).
+* `workers` — number of parallel workers.
+* `fullyParallel` — run tests in-file in parallel (project-level too).
+* `retries` — number of retries for failed tests.
+* `projects` — array of `TestProject` entries.
+* `use` — the default `use` object (see section 1).
+* `globalSetup` — path (or array of paths) to global setup file(s).
+* `globalTeardown` — (if available) teardown hook(s).
+* `metadata` — arbitrary metadata for reports (git info, CI, etc.).
+* `captureGitInfo` — controls capture of git commit/diff metadata (commit/diff).
+* `snapshotPathTemplate` — where snapshots are saved (format templates).
+* `reportSlowTests` or similar (if present in your Playwright version) — thresholds for slow tests reporting.
+* `forbidOnly`, `failOnFlakyTests` — CI protection flags.
+* `build` — transpiler/external bundle config (added in recent versions).
+* `workers` / `shard` / `sharding`-like options (test parallelization/shard control).
+* `webServer` — configuration to start a dev server before tests (Playwright supports `webServer` in config).
+* `cli`-related defaults (in some docs; many runner-level flags map to config properties)
+
+> Important: **Most TestProject properties are also valid at root**, because root `TestConfig` acts as the base for all projects. Use root for global defaults and `projects[]` for per-target overrides. See TestConfig documentation. ([Playwright][1])
+
+---
+
+## 3) Properties that belong inside each **project** entry (TestProject)
+
+`projects` is an array of objects. Each entry can include any of the test-run options and `use` overrides. Common `projects[]` properties:
+
+* `name` — project name (string).
+* `testDir` / `testMatch` / `testIgnore` — project-specific test selection (overrides root).
+* `use` — project-level `use` object (overrides root `use`). ([Playwright][3])
+* `dependencies` — list of other project names that must run before this project (useful for project-based global setup). ([Playwright][3])
+* `fullyParallel` — run all tests in project fully parallel. ([Playwright][3])
+* `timeout` — project-specific test timeout.
+* `retries` — project-specific retries.
+* `workers` — project-specific worker count.
+* `metadata` — per-project metadata.
+* `outputDir` — per-project output/artifact directory.
+* `grep` / `grepInvert` — project-specific filters (if needed).
+* `snapshotPathTemplate` — project-specific different snapshot location (if you want).
+
+> Practically: put shared defaults at root, then create `projects` entries for browser-specific or environment-specific overrides (e.g., `use: devices['Desktop Chrome']` or `use: { baseURL: 'https://staging', retries: 2 }`). ([Playwright][3])
+
+---
+
+## 4) Where a property lives (summary table — canonical mapping)
+
+* **Only in `use` (TestOptions):** browser / context / environment options — `acceptDownloads`, `actionTimeout`, `baseURL`, `browserName`, `bypassCSP`, `colorScheme`, `deviceScaleFactor`, `extraHTTPHeaders`, `geolocation`, `headless`, `httpCredentials`, `ignoreHTTPSErrors`, `isMobile`, `locale`, `permissions`, `proxy`, `recordVideo`/`video`, `screenshot`, `storageState`, `trace`, `timezoneId`, `userAgent`, `viewport`, etc. ([Playwright][2])
+
+* **Root / Project-level (TestConfig / TestProject):** test-run and runner-level options — `testDir`, `testMatch`, `testIgnore`, `outputDir`, `timeout`, `globalTimeout`, `expect`, `reporter`, `reporters`, `workers`, `forbidOnly`, `retries`, `fullyParallel`, `preserveOutput`, `projects`, `use` (default), `globalSetup`, `globalTeardown`, `metadata`, `captureGitInfo`, `build`, `snapshotPathTemplate`, `webServer`, `failOnFlakyTests`, `dependencies`, `name` (project), `dependencies` (project) etc. ([Playwright][1])
+
+---
+
+## 5) Notes and version-specific / recent additions
+
+* Playwright **adds new config properties in newer releases** (for example `build` and `captureGitInfo` were added in v1.35+ and v1.51+, respectively). If you must be exhaustive for the exact Playwright version you use, check the API `TestConfig`, `TestOptions`, `TestProject` pages for your installed Playwright version. ([Playwright][1])
+* Some properties accept structured sub-objects (for example `expect` has `timeout`, `toHaveScreenshot`, `toMatchSnapshot` sub-options). See the `expect` section in the `TestConfig` docs for the full shape. ([Playwright][1])
+
+---
+
+## 6) Where I got this and next steps
+
+Authoritative references (these contain the exhaustive, versioned property lists and exact types that I used for the mapping above):
+
+* Playwright TestConfig (all root/project-level properties). ([Playwright][1])
+* Playwright TestOptions (the complete `use` properties). ([Playwright][2])
+* Playwright TestProject (project-scoped properties & `dependencies`). ([Playwright][3])
+
+---
+
+## Would you like an exhaustive downloadable table?
+
+I can convert the full canonical lists (exact property names and types) directly from the docs into:
+
+* a CSV/spreadsheet (column: property | scope(s) | type | doc-link), **or**
+* a ready-to-use `playwright.config.ts` template that includes every property (commented out) so you can enable/modify exactly what you need.
+
+Tell me which format you prefer and I’ll produce it (I can generate and attach the file right away).
+
+If you want me to proceed immediately, I will produce the CSV or the complete config file (no waiting required).
+
+[1]: https://playwright.dev/docs/api/class-testconfig "TestConfig | Playwright"
+[2]: https://playwright.dev/docs/api/class-testoptions "TestOptions | Playwright"
+[3]: https://playwright.dev/docs/api/class-testproject "TestProject | Playwright"
