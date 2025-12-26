@@ -63,7 +63,6 @@ These appear at the top-level of `defineConfig({...})` (and most of them can als
 * `updateSnapshots` / `update` (snapshots update mode via CLI or config).
 * `outputDir` — where artifacts are written by default.
 * `preserveOutput` / `preserveOutput`-style options (controls whether to keep artifacts from passed tests, etc.).
-* `fullyParallel` — run tests in-file in parallel (project-level too).
 * `retries` — number of retries for failed tests.
 * `projects` — array of `TestProject` entries.
 * `globalSetup` — path (or array of paths) to global setup file(s).
