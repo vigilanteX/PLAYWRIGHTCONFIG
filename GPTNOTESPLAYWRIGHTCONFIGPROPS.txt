@@ -58,31 +58,21 @@ These must be placed in `use` (root `use` or `projects[].use` or `test.use()`):
 
 These appear at the top-level of `defineConfig({...})` (and most of them can also be set per-project):
 
-* `testDir` — directory with tests.
-* `testMatch` — glob pattern(s) for matching test files.
-* `testIgnore` — glob(s) to ignore.
-* `timeout` — per-test timeout (ms).
-* `globalTimeout` — whole-run timeout.
+
 * `expect` — expect-specific configuration (timeouts, snapshot matching options).
-* `forbidOnly` — fail CI if `test.only()` present.
 * `updateSnapshots` / `update` (snapshots update mode via CLI or config).
-* `reporter` (or `reporters`) — built-in/custom reporters.
 * `outputDir` — where artifacts are written by default.
 * `preserveOutput` / `preserveOutput`-style options (controls whether to keep artifacts from passed tests, etc.).
-* `workers` — number of parallel workers.
 * `fullyParallel` — run tests in-file in parallel (project-level too).
 * `retries` — number of retries for failed tests.
 * `projects` — array of `TestProject` entries.
-* `use` — the default `use` object (see section 1).
 * `globalSetup` — path (or array of paths) to global setup file(s).
 * `globalTeardown` — (if available) teardown hook(s).
 * `metadata` — arbitrary metadata for reports (git info, CI, etc.).
 * `captureGitInfo` — controls capture of git commit/diff metadata (commit/diff).
 * `snapshotPathTemplate` — where snapshots are saved (format templates).
 * `reportSlowTests` or similar (if present in your Playwright version) — thresholds for slow tests reporting.
-* `forbidOnly`, `failOnFlakyTests` — CI protection flags.
 * `build` — transpiler/external bundle config (added in recent versions).
-* `workers` / `shard` / `sharding`-like options (test parallelization/shard control).
 * `webServer` — configuration to start a dev server before tests (Playwright supports `webServer` in config).
 * `cli`-related defaults (in some docs; many runner-level flags map to config properties)
 
