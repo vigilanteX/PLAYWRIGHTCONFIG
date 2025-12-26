@@ -1,6 +1,11 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 export const config = {
-  testDir: "./redoconfigsGPT/10retries",
-  retries: 3,
+  testDir: "./redoconfigsGPT/11metadata",
+  metadata: {
+    environment: "SIT",
+    key: "securitykey",
+    secret: "securitypassword",
+  },
+  reporter: [["json"]],
 };
