@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from "@playwright/test";
 import myCustomConfig from "./myconfig.js";
+import { config } from "./gptmyconfig.js";
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -12,4 +13,4 @@ import myCustomConfig from "./myconfig.js";
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-export default defineConfig(myCustomConfig);
+export default defineConfig(config);
