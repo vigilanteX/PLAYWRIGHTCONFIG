@@ -61,7 +61,6 @@ These appear at the top-level of `defineConfig({...})` (and most of them can als
 
 * 
 * `updateSnapshots` / `update` (snapshots update mode via CLI or config).
-* `outputDir` — where artifacts are written by default.
 * `preserveOutput` / `preserveOutput`-style options (controls whether to keep artifacts from passed tests, etc.).
 * `projects` — array of `TestProject` entries.
 * `globalSetup` — path (or array of paths) to global setup file(s).
@@ -137,3 +136,54 @@ If you want me to proceed immediately, I will produce the CSV or the complete co
 [1]: https://playwright.dev/docs/api/class-testconfig "TestConfig | Playwright"
 [2]: https://playwright.dev/docs/api/class-testoptions "TestOptions | Playwright"
 [3]: https://playwright.dev/docs/api/class-testproject "TestProject | Playwright"
+
+
+
+
+//27 dec 2025 
+use block properties
+🔹 Core test behavior
+
+baseURL
+
+viewport
+
+browserName
+
+headless
+
+🔹 Debugging & artifacts
+
+screenshot
+
+video
+
+trace
+
+🔹 Auth & session
+
+storageState
+
+🔹 Device presets (very common)
+
+devices['Desktop Chrome']
+
+devices['iPhone 14'] (or similar)
+
+//below are rare use block
+ignoreHTTPSErrors
+
+extraHTTPHeaders
+
+httpCredentials
+
+proxy
+
+
+
+//IN ROOT Important
+globalSetup
+
+globalTeardown
+
+webServer
