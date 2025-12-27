@@ -1,10 +1,14 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 export const config = {
-  testDir: "./redoconfigsGPT/15globalTear",
+  testDir: "./redoconfigsGPT/16webserver",
   use: {
     headless: false,
   },
-  globalSetup: "./globalSetupInfo/global.setup.js",
-  globalTeardown: "./globalTeardownInfo/global.tear.js",
+  webServer: {
+    url: "http://localhost:9000",
+    timeout: 10000,
+    command: "node ./myserver.js",
+    stdout: "pipe",
+  },
 };
