@@ -1,11 +1,13 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 export const config = {
-  testDir: "./redoconfigsGPT/UseObject/05screenshot",
+  testDir: "./redoconfigsGPT/UseObject/06video",
   outputDir: "./custom-output",
   use: {
     headless: false,
     baseURL: "https://naveenautomationlabs.com",
-    screenshot: "only-on-failure",
+    video: {
+      mode: "on",
+    },
   },
 };
