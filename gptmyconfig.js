@@ -5,6 +5,7 @@ export const config = {
   use: {
     headless: true,
   },
+  workers: 4,
   projects: [
     {
       name: "customff",
@@ -15,7 +16,13 @@ export const config = {
       name: "testdirmatchignore",
       use: { headless: false, browserName: "chromium" },
       testDir: "./redoconfigsGPT/ProjectArray/02testdirmatchignore",
-      testIgnore: "**/*.spec.js",
+    },
+    {
+      name: "workersinfo",
+      use: { headless: false, browserName: "firefox" },
+      testDir: "redoconfigsGPT/ProjectArray/03workers",
+      workers: 1,
+      fullyParallel: true,
     },
   ],
 };
