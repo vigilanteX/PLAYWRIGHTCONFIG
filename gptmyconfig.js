@@ -15,7 +15,7 @@ export const config = {
       name: "testdirmatchignore",
       use: { headless: false, browserName: "chromium" },
       testDir: "./redoconfigsGPT/ProjectArray/02testdirmatchignore",
-      testMatch: "**/*.spec.js",
+      testIgnore: "**/*.spec.js",
     },
   ],
 };
