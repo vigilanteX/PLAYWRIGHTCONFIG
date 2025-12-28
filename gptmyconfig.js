@@ -11,5 +11,11 @@ export const config = {
       use: { headless: false, browserName: "firefox" },
       testDir: "./redoconfigsGPT/ProjectArray/01name",
     },
+    {
+      name: "testdirmatchignore",
+      use: { headless: false, browserName: "chromium" },
+      testDir: "./redoconfigsGPT/ProjectArray/02testdirmatchignore",
+      testMatch: "**/*.spec.js",
+    },
   ],
 };
