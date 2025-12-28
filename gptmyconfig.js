@@ -30,5 +30,11 @@ export const config = {
       testDir: "redoconfigsGPT/ProjectArray/04grep",
       grepInvert: new RegExp("testmatchdemox2"),
     },
+    {
+      name: "outDirTest",
+      use: { headless: false, video: "on", trace: "on", screenshot: "on" },
+      testDir: "redoconfigsGPT/ProjectArray/05outdirtest",
+      outputDir: "redoconfigsGPT/ProjectArray/05outdirtest/output-folder",
+    },
   ],
 };
