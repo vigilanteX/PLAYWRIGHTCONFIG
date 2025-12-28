@@ -1,11 +1,15 @@
 import { devices } from "@playwright/test";
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 export const config = {
-  testDir: "./redoconfigsGPT/UseObject/08storageState",
-  outputDir: "./custom-output",
+  testDir: "redoconfigsGPT/ProjectArray/01name/demo.spec.js",
   use: {
-    headless: false,
-    storageState: "storagesession/user.json",
+    headless: true,
   },
-  globalSetup: "redoconfigsGPT/UseObject/08storageState/custom.setup.js",
+  projects: [
+    {
+      name: "customff",
+      use: { headless: false, browserName: "firefox" },
+      testDir: "./redoconfigsGPT/ProjectArray/01name",
+    },
+  ],
 };
