@@ -28,7 +28,7 @@ export const config = {
       name: "grepcheck",
       use: { headless: false },
       testDir: "redoconfigsGPT/ProjectArray/04grep",
-      grep: new RegExp("testmatchdemox2"),
+      grepInvert: new RegExp("testmatchdemox2"),
     },
   ],
 };
