@@ -24,5 +24,11 @@ export const config = {
       workers: 1,
       fullyParallel: true,
     },
+    {
+      name: "grepcheck",
+      use: { headless: false },
+      testDir: "redoconfigsGPT/ProjectArray/04grep",
+      grep: new RegExp("testmatchdemox2"),
+    },
   ],
 };
